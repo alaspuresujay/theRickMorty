@@ -2,10 +2,10 @@ import axios from 'axios';
 
 const baseUrl = 'https://rickandmortyapi.com/api';
 
-export const getCharacters = async () => {
+export const getCharacters = async page => {
   var config = {
     method: 'get',
-    url: `${baseUrl}/character/`,
+    url: `${baseUrl}/character?page=${page}`,
     headers: {},
   };
   try {

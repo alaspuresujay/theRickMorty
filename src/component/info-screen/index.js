@@ -29,7 +29,7 @@ const InfoScreen = ({data, open, hideModal}) => {
             <RegularText>{data?.species}</RegularText>
             <RegularText>{data?.status}</RegularText>
           </View>
-          <StatusDot color={data.status} />
+          <StatusDot color={data?.status} />
         </RowView>
         <View style={{height: 16}} />
         <RowView alignItems={'center'}>

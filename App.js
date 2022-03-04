@@ -24,14 +24,19 @@ const App = () => {
   const [charactors, setCharactors] = useState([]);
   const [infoVisible, setInfoVisible] = useState(false);
   const [currentCharacter, setCurrentCharacter] = useState(null);
+  const [page, setPage] = useState(1);
+  let pageNumber = 0;
+
+  const loadCharacters = async page => {
+    console.log('page', page);
+    const response = await getCharacters(page);
+    console.log(response.data.results);
+    setCharactors(prev => [...prev, ...response.data.results]);
+  };
+
   useEffect(() => {
-    (async () => {
-      const response = await getCharacters();
-      console.log(response);
-      setCharactors(response.data.results);
-      console.log(new Set(response.data.results.map(item => item.status)));
-    })();
-  }, []);
+    loadCharacters(page);
+  }, [page]);
 
   const hideModal = () => {
     setInfoVisible(false);
@@ -56,6 +61,8 @@ const App = () => {
             </TouchableOpacity>
           )}
           keyExtractor={item => item.id}
+          onEndReachedThreshold={0.5}
+          onEndReached={() => setPage(prev => prev + 1)}
         />
       </CardContainer>
       <InfoScreen

@@ -10,19 +10,19 @@ const Card = ({data}) => {
   return (
     <CardContainer showShadow>
       <RowView>
-        <Avatar url={data.image} />
+        <Avatar url={data?.image} />
         <View>
-          <Bold>{data.name}</Bold>
-          <RegularText>{data.species}</RegularText>
+          <Bold>{data?.name}</Bold>
+          <RegularText>{data?.species}</RegularText>
         </View>
-        <StatusDot color={data.status} />
+        <StatusDot color={data?.status} />
       </RowView>
       <View style={{height: 16}} />
       <RowView alignItems={'center'}>
         <RowView alignItems={'center'}>
           <Icon name="map-marker" size={20} />
           <View style={{width: 4}} />
-          <RegularText>{data.location.name.slice(0, 15)}</RegularText>
+          <RegularText>{data?.location?.name.slice(0, 15)}</RegularText>
         </RowView>
         <View
           style={{
@@ -35,7 +35,7 @@ const Card = ({data}) => {
         <RowView alignItems={'center'}>
           <Icon name="earth" size={20} />
           <View style={{width: 4}} />
-          <RegularText>{data.origin.name.slice(0, 15)}</RegularText>
+          <RegularText>{data?.origin?.name.slice(0, 15)}</RegularText>
         </RowView>
       </RowView>
     </CardContainer>
