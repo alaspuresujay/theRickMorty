@@ -2,9 +2,9 @@ import {Image} from 'react-native';
 import React from 'react';
 import styled from 'styled-components';
 
-const Avatar = ({url}) => {
+const Avatar = ({url, color}) => {
   return (
-    <AvatarContainer>
+    <AvatarContainer color={color}>
       <Image
         style={{height: '100%', width: '100%'}}
         source={{
@@ -26,5 +26,6 @@ const AvatarContainer = styled.View`
   align-items: center;
   background-color: #f5f5f5;
   margin-right: 16px;
-  /* border-width: 2px; */
+  border-width: 2px;
+  border-color: ${_ => _.color || 'transparent'};
 `;

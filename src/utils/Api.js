@@ -8,6 +8,7 @@ export const getCharacters = async page => {
     url: `${baseUrl}/character?page=${page}`,
     headers: {},
   };
+  console.log('Fetching data from API', config.url);
   try {
     const response = await axios(config);
     return {
@@ -22,12 +23,14 @@ export const getCharacters = async page => {
   }
 };
 
-export const getLocations = async ({id}) => {
+export const getLocations = async id => {
   var config = {
     method: 'get',
     url: `${baseUrl}/location/${id}`,
     headers: {},
   };
+  console.log('Fetching data from API', config.url);
+
   try {
     const response = await axios(config);
     return {
@@ -41,12 +44,14 @@ export const getLocations = async ({id}) => {
     };
   }
 };
-export const getEpisodes = async ({ids}) => {
+export const getEpisodes = async ids => {
   var config = {
     method: 'get',
     url: `${baseUrl}/episode/${ids}`,
     headers: {},
   };
+  console.log('Fetching data from API', config.url);
+
   try {
     const response = await axios(config);
     return {
