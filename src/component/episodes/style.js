@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import COLORS from '../../utils/colors';
 
-export const BoxContainer = styled.View``;
+export const BoxContainer = styled.View`
+  flex: 1;
+`;
 
 export const Box = styled.View`
   border: 1px solid ${COLORS.OVERLAY_LIGHT};

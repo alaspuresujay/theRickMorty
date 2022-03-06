@@ -1,7 +1,8 @@
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, SafeAreaView} from 'react-native';
 import React from 'react';
 import {BoxContainer, Box} from './style';
 import {Bold} from '../text';
+import SpaceBox from '../atom/SpaceBox';
 
 const _renderItem = ({item}) => (
   <Box>
@@ -13,18 +14,18 @@ const _renderItem = ({item}) => (
 );
 
 const Episodes = ({episodes}) => {
-  // console.log('Episodes', episodes);
+  console.log('Episodes', episodes);
   return (
     <BoxContainer>
       <Bold>Episodes</Bold>
       {/* <Divider /> */}
       <View style={{height: 8}} />
-
       <FlatList
         showsVerticalScrollIndicator={false}
         data={episodes}
         renderItem={_renderItem}
         keyExtractor={item => item.id}
+        // ListFooterComponent={() => <SpaceBox height={20} />}
       />
     </BoxContainer>
   );
