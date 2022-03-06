@@ -7,31 +7,21 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import {
-  FlatList,
-  Modal,
-  SafeAreaView,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {FlatList, StatusBar, TouchableOpacity} from 'react-native';
 import Header from './src/component/atom/Header';
 import Card from './src/component/card';
 import InfoScreen from './src/component/info-screen';
 import {getCharacters} from './src/utils/Api';
 import {CardContainer} from './style';
+
 const App = () => {
   const [charactors, setCharactors] = useState([]);
   const [infoVisible, setInfoVisible] = useState(false);
   const [currentCharacter, setCurrentCharacter] = useState(null);
   const [page, setPage] = useState(1);
-  let pageNumber = 0;
 
   const loadCharacters = async page => {
-    console.log('page', page);
     const response = await getCharacters(page);
-    console.log(response.data.results);
     setCharactors(prev => [...prev, ...response.data.results]);
   };
 

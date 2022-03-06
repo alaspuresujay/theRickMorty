@@ -39,6 +39,7 @@ const Container = styled.View`
   margin-top: -4px;
   border-bottom-width: 1px;
   border-bottom-color: ${COLORS.OVERLAY_LIGHT};
+  background-color: whitesmoke;
 `;
 
 const LogoContainer = styled.View`

@@ -22,7 +22,7 @@ export function Regular2228({children, ...rest}) {
 export function Bold({children, ...rest}) {
   return (
     <Text
-      style={{fontWeight: 'bold'}}
+      style={{fontWeight: 'bold', color: COLORS.BLACK}}
       fontSize={FONT_SIZES['18']}
       lineHeight={FONT_SIZES['22']}
       {...rest}>

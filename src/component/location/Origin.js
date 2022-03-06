@@ -1,10 +1,8 @@
-import {Text} from 'react-native';
 import React from 'react';
 import {Container, Divider} from './style';
-import {Bold, TextKeyValue} from '../text';
+import {Bold, RegularText, TextKeyValue} from '../text';
 
-const Origin = ({label, origin}) => {
-  console.log(label, origin);
+const Origin = ({label, origin, full}) => {
   return (
     <Container>
       <Bold>{label}</Bold>
@@ -19,7 +17,7 @@ const Origin = ({label, origin}) => {
           </TextKeyValue>
         </>
       ) : (
-        <Text>No {label} data</Text>
+        <RegularText>No {label} data</RegularText>
       )}
     </Container>
   );

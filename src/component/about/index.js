@@ -1,5 +1,6 @@
-import {View, Text, Modal, Button, Pressable, Linking} from 'react-native';
+import {Modal, Pressable, Linking} from 'react-native';
 import React from 'react';
+
 import {Container} from './style';
 import {Bold, Regular2228, RegularText} from '../text';
 import SpaceBox from '../atom/SpaceBox';
@@ -16,7 +17,7 @@ const AboutMe = ({open, hideModal}) => {
           onPress={() => Linking.openURL('http://alaspuresujay.github.io/')}>
           <RegularText>
             Portfolio:{' '}
-            <Text style={{color: 'blue'}}>alaspuresujay.github.io</Text>
+            <RegularText color={'blue'}>alaspuresujay.github.io</RegularText>
           </RegularText>
         </Pressable>
       </Container>

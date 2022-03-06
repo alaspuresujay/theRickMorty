@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 
 const SpaceBox = ({height = '100%', width = '100%'}) => {

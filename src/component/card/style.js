@@ -19,3 +19,10 @@ export const StatusDot = styled.View`
   background-color: ${_ => (_.color == 'Alive' ? COLORS.GREEN : COLORS.RED)};
   margin-left: 4px;
 `;
+
+export const Spacer = styled.View`
+  height: 80%;
+  width: 1px;
+  background-color: ${COLORS.OVERLAY_DARK};
+  margin-horizontal: 16px;
+`;

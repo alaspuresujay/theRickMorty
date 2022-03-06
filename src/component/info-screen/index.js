@@ -1,9 +1,10 @@
 import {View, Modal, TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import {RowView} from '../atom/RowView';
 import Avatar from '../atom/Avatar';
 import {Bold, RegularText} from '../text';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Box, ModalContainer, ModalHeader} from './style';
 import Origin from '../location/Origin';
 import {getEpisodes, getLocations} from '../../utils/Api';
@@ -18,8 +19,6 @@ const InfoScreen = ({data, open, hideModal}) => {
   const [episodes, setEpisodes] = useState(null);
 
   useEffect(() => {
-    console.log('InfoScreen', data);
-
     const getData = async () => {
       if (data?.origin?.url) {
         const org = await getLocations(getIdFromUrl(data?.origin?.url));
@@ -31,14 +30,12 @@ const InfoScreen = ({data, open, hideModal}) => {
       }
       const episodeIds = data?.episode.map(e => getIdFromUrl(e)).join(',');
       const episodes = await getEpisodes(episodeIds);
-      console.log('episodes', episodes);
       if (!episodes.error) setEpisodes(episodes.data);
     };
 
     getData();
 
     return () => {
-      console.log('InfoScreen unmount');
       setOrigin(null);
       setLocation(null);
       setEpisodes(null);
@@ -73,10 +70,13 @@ const InfoScreen = ({data, open, hideModal}) => {
 
         <Box>
           <RowView>
-            {origin && <Origin label={'Origin'} origin={origin} />}
-            {/* <Divider /> */}
+            {origin && (
+              <Origin full={location} label={'Origin'} origin={origin} />
+            )}
             <SpaceBox width={8} />
-            {location && <Origin label={'Location'} origin={location} />}
+            {location && (
+              <Origin full={origin} label={'Location'} origin={location} />
+            )}
           </RowView>
         </Box>
         {episodes && <Episodes episodes={episodes} />}

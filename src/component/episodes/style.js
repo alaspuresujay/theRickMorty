@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import COLORS from '../../utils/colors';
 
 export const BoxContainer = styled.View`
+  padding-top: 8px;
   flex: 1;
 `;
 
