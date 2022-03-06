@@ -1,7 +1,6 @@
-import {View, Text, Image} from 'react-native';
-import React, {useEffect} from 'react';
+import {View} from 'react-native';
+import React from 'react';
 import {CardContainer, StatusDot} from './style';
-// import {data} from '../../data';
 import {Bold, RegularText} from '../text';
 import {RowView} from '../atom/RowView';
 import Avatar from '../atom/Avatar';

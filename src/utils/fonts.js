@@ -12,13 +12,6 @@ function scaleFont(size) {
   }
 }
 
-export const FONTS = {
-  Bold: 'ProximaNovaA-Bold',
-  SemiBold: 'ProximaNovaA-Semibold',
-  Regular: 'ProximaNovaA-Regular',
-  ExtraBold: 'ProximaNovaA-Extrabld',
-};
-
 export const FONT_SIZES = {
   8: `${scaleFont(8)}px`,
   10: `${scaleFont(10)}px`,

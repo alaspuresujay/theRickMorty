@@ -16,3 +16,7 @@ export const Text = styled.Text`
 export const FontPropTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,
 };
+
+export const BoldText = styled.Text`
+  font-weight: bold;
+`;

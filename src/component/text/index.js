@@ -1,7 +1,8 @@
 import React from 'react';
+import COLORS from '../../utils/colors';
 import {FONT_SIZES} from '../../utils/fonts';
 
-import {Text} from './style';
+import {BoldText, Text} from './style';
 
 export function RegularText({children, ...rest}) {
   return (
@@ -29,3 +30,12 @@ export function Bold({children, ...rest}) {
     </Text>
   );
 }
+
+export const TextKeyValue = ({label, children}) => {
+  return (
+    <Text color={COLORS.OVERLAY_DARK}>
+      <BoldText>{label}: </BoldText>
+      {children}
+    </Text>
+  );
+};

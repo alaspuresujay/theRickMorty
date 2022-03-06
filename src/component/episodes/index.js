@@ -2,7 +2,6 @@ import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import {BoxContainer, Box} from './style';
 import {Bold} from '../text';
-import {Divider} from '../info-screen/style';
 
 const _renderItem = ({item}) => (
   <Box>
@@ -14,7 +13,7 @@ const _renderItem = ({item}) => (
 );
 
 const Episodes = ({episodes}) => {
-  console.log('Episodes', episodes);
+  // console.log('Episodes', episodes);
   return (
     <BoxContainer>
       <Bold>Episodes</Bold>

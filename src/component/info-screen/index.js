@@ -1,17 +1,16 @@
-import {View, Text, Modal, TouchableOpacity} from 'react-native';
+import {View, Modal, TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {RowView} from '../atom/RowView';
 import Avatar from '../atom/Avatar';
 import {Bold, RegularText} from '../text';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Box, Divider, ModalContainer, ModalHeader} from './style';
-import {StatusDot} from '../card/style';
+import {Box, ModalContainer, ModalHeader} from './style';
 import Origin from '../location/Origin';
 import {getEpisodes, getLocations} from '../../utils/Api';
 import {getIdFromUrl} from '../../utils/helper-functions';
 import Episodes from '../episodes';
-import Card from '../card';
 import COLORS from '../../utils/colors';
+import SpaceBox from '../atom/SpaceBox';
 
 const InfoScreen = ({data, open, hideModal}) => {
   const [origin, setOrigin] = useState(null);
@@ -70,22 +69,16 @@ const InfoScreen = ({data, open, hideModal}) => {
           </RowView>
         </Box>
 
-        <View style={{height: 8}} />
-        {/* <RowView alignItems={'center'}>
-          <Icon name="earth" size={20} />
-          <View style={{width: 4}} />
-          <RegularText>{data?.location?.name}</RegularText>
-        </RowView> */}
-        {/* <Divider /> */}
-        <RowView>
-          <>
+        <SpaceBox height={8} />
+
+        <Box>
+          <RowView>
             {origin && <Origin label={'Origin'} origin={origin} />}
             {/* <Divider /> */}
-            <View style={{width: 8}} />
+            <SpaceBox width={8} />
             {location && <Origin label={'Location'} origin={location} />}
-          </>
-        </RowView>
-        <Divider />
+          </RowView>
+        </Box>
         {episodes && <Episodes episodes={episodes} />}
       </ModalContainer>
     </Modal>

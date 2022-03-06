@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Header from './src/component/atom/Header';
 import Card from './src/component/card';
 import InfoScreen from './src/component/info-screen';
 import {getCharacters} from './src/utils/Api';
@@ -46,6 +47,8 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle={'light-content'} />
+      <Header />
+
       <CardContainer>
         <FlatList
           // style={{flex: 1}}

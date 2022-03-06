@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import COLORS from '../../utils/colors';
+import {screenWidth} from '../../utils/constant';
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -27,4 +28,7 @@ export const Box = styled.View`
   padding: 8px;
   margin-top: 8px;
   margin-bottom: 8px;
+  /* max-width: ${screenWidth}; */
+  flex-direction: row;
+  overflow: hidden;
 `;
