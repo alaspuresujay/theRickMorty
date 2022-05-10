@@ -24,6 +24,7 @@ const Episodes = ({episodes}) => {
         data={episodes}
         renderItem={_renderItem}
         keyExtractor={item => item.id}
+        maxToRenderPerBatch={15}
       />
     </BoxContainer>
   );

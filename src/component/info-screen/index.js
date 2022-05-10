@@ -1,4 +1,4 @@
-import {View, Modal, TouchableOpacity} from 'react-native';
+import {View, Modal, TouchableOpacity, StatusBar} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -30,7 +30,10 @@ const InfoScreen = ({data, open, hideModal}) => {
       }
       const episodeIds = data?.episode.map(e => getIdFromUrl(e)).join(',');
       const episodes = await getEpisodes(episodeIds);
-      if (!episodes.error) setEpisodes(episodes.data);
+      if (!episodes.error) {
+        console.log(episodes.data);
+        setEpisodes(episodes.data);
+      }
     };
 
     getData();
@@ -43,7 +46,12 @@ const InfoScreen = ({data, open, hideModal}) => {
   }, [data?.id]);
 
   return (
-    <Modal visible={open} onRequestClose={hideModal} animationType="slide">
+    <Modal
+      visible={open}
+      onRequestClose={hideModal}
+      animationType="slide"
+      presentationStyle="fullScreen">
+      <StatusBar barStyle="dark-content" />
       <ModalContainer>
         <ModalHeader>
           <Bold>{data?.name}</Bold>

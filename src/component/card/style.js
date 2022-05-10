@@ -4,7 +4,7 @@ import COLORS from '../../utils/colors';
 export const CardContainer = styled.View`
   background-color: ${_ => _.bgColor || COLORS.WHITE};
   border-radius: 8px;
-  ${_ => (_.showShadow ? `box-shadow: 0 0 5px ${COLORS.OVERLAY_DARK}` : '')};
+  ${_ => (_.showShadow ? `box-shadow: 0 0 5px ${COLORS.OVERLAY_LIGHT}` : '')};
   elevation: ${_ => (_.showShadow ? 3 : 0)};
   padding-vertical: 16px;
   padding-horizontal: 16px;

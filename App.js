@@ -7,7 +7,12 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import {FlatList, StatusBar, TouchableOpacity} from 'react-native';
+import {
+  FlatList,
+  SafeAreaView,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import Header from './src/component/atom/Header';
 import Card from './src/component/card';
 import InfoScreen from './src/component/info-screen';
@@ -22,6 +27,11 @@ const App = () => {
 
   const loadCharacters = async page => {
     const response = await getCharacters(page);
+    console.log(
+      'LOG> [theRickMorty/App.js:30] response.data --->',
+      response.data,
+    );
+
     setCharactors(prev => [...prev, ...response.data.results]);
   };
 
@@ -35,8 +45,8 @@ const App = () => {
   };
 
   return (
-    <>
-      <StatusBar barStyle={'light-content'} />
+    <SafeAreaView>
+      {/* <StatusBar /> */}
       <Header />
 
       <CardContainer>
@@ -56,6 +66,7 @@ const App = () => {
           keyExtractor={item => item.id}
           onEndReachedThreshold={0.5}
           onEndReached={() => setPage(prev => prev + 1)}
+          contentContainerStyle={{marginHorizontal: 16}}
         />
       </CardContainer>
       <InfoScreen
@@ -63,7 +74,7 @@ const App = () => {
         data={currentCharacter}
         hideModal={hideModal}
       />
-    </>
+    </SafeAreaView>
   );
 };
 

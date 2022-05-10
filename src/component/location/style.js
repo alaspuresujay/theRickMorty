@@ -11,7 +11,7 @@ export const Divider = styled.View`
 `;
 
 export const Container = styled.View`
-  max-width: ${_ => (!_.full ? screenWidth / 2 - 20 : '100%')};
+  max-width: ${_ => (!_.full ? screenWidth / 2 - 20 + 'px' : '100%')};
 `;
 
 export const BoldText = styled.Text`

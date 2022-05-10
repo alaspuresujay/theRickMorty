@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 import styled from 'styled-components';
 import COLORS from '../../utils/colors';
 import {screenWidth} from '../../utils/constant';
@@ -5,6 +6,9 @@ import {screenWidth} from '../../utils/constant';
 export const ModalContainer = styled.View`
   flex: 1;
   padding: 16px;
+  ${Platform.OS === 'ios' && `padding-top: 38px`}
+  background-color: ${COLORS.WHITE};
+  margin-top: ${Platform.OS === 'ios' ? '20px' : '0px'};
 `;
 
 export const ModalHeader = styled.View`
